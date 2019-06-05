@@ -1,0 +1,29 @@
+﻿
+
+
+<!DOCTYPE html>
+
+<html ng-controller="AdministracionController">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EstadoIndex</title>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="e in EstadoData">
+                    <td>
+                        {{e.Nombre}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
