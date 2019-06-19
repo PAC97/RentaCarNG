@@ -1,0 +1,40 @@
+﻿<div class="ml-3">
+    Bienvenido: @Session["NombreCompleto"]
+    <a href="#!EditUser/nuevo" class="btn btn-success mb-3 mt-2">Crear Nuevo</a>
+    <div class="row">
+        <div class="col-md-4">
+            <input class="form-control" type="text" ng-model="busqueda" placeholder="Buscar Usuario" />
+        </div>
+    </div>
+    <br />
+    <table class="table table-striped mb-3">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Codigo</th>
+                <th>Tipo de Usuario</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody class="mb-3">
+            <tr ng-repeat="v in VehiculoData | filter:busqueda | limitTo:posicion | limitTo:-3">
+                <td>{{numero}}</td>
+                <td>{{v.UsuarioID}}</td>
+                <td>{{v.Marca}}</td>
+                <td>{{v.Modelo}}</td>
+                <td>{{v.Year}}</td>
+                <td>{{v.PrecioDiario}}</td>
+                <td><img src="{{v.Imagen}}"/></td>
+                <td><a class="btn btn-primary" href="#!EditVehiculo/{{v.VehiculoID}}">Editar</a> | <a class="btn btn-danger" href="#!DeleteVehiculo/{{v.VehiculoID}}">Eliminar</a></td>
+
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" ng-click="anterior()">Anterior</button>
+    <button class="btn btn-primary" ng-click="siguiente()">Siguiente</button>
+</div>
+
+

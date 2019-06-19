@@ -2,6 +2,8 @@
 
 app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
     $scope.Administracion = '../Administracion/Index';
-    $scope.Menu = '../Administracion/menu';
+    $scope.Menu = '../Home/menu';
+    $scope.MenuSuperior = '../Administracion/menu';
+    
 
 }]);

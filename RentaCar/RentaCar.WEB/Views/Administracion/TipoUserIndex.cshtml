@@ -1,0 +1,32 @@
+﻿
+<div class="ml-3">
+    <a href="#!EditTipoUser/nuevo" class="btn btn-success mb-3 mt-2">Crear Nuevo</a>
+    <div class="row">
+        <div class="col-md-4">
+            <input class="form-control" type="text" ng-model="busqueda" placeholder="Buscar Tipo de Usuario" />
+        </div>
+    </div>
+    <br />
+    <table class="table table-striped ">
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Tipo de Usuario</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody class="mb-3">
+            <tr ng-repeat="tu in TipoUserData | filter:busqueda | limitTo:posicion | limitTo:-3 ">
+                <td>{{tu.TipoUsuarioID}}</td>
+                <td>{{tu.Nombre}}</td>
+                <td>{{tu.Estado.Nombre}}</td>
+                <td><a class="btn btn-primary" href="#!EditTipoUser/{{tu.TipoUsuarioID}}">Editar</a> | <a class="btn btn-danger" href="#!DeleteTipoUser/{{tu.TipoUsuarioID}}">Eliminar</a></td>
+
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" ng-click="anterior()">Anterior</button>
+    <button class="btn btn-primary" ng-click="siguiente()">Siguiente</button>
+</div>
+

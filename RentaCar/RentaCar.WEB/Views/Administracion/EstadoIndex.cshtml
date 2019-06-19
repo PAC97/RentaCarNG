@@ -1,29 +1,26 @@
 ﻿
-
-
-<!DOCTYPE html>
-
-<html ng-controller="AdministracionController">
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>EstadoIndex</title>
-</head>
-<body>
-    <div class="container">
-        <table>
+        <a href="#!EditEstado/nuevo" class="btn btn-success mb-3 mt-2">Crear Nuevo</a> 
+        <div class="row">
+            <div class="col-md-4">
+                <input class="form-control" type="text" ng-model="busqueda" placeholder="Buscar Estados" />
+            </div>
+        </div>
+<br />
+        <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Estado</th>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="e in EstadoData">
-                    <td>
-                        {{e.Nombre}}
-                    </td>
+                <tr ng-repeat="e in EstadoData | filter:busqueda">
+                    <td>{{e.EstadoID}}</td>
+                    <td>{{e.Nombre}}</td>
+                    <td><a href="#!EditEstado/{{e.EstadoID}}">Ver</a></td>
                 </tr>
             </tbody>
         </table>
-    </div>
-</body>
-</html>
+    
+

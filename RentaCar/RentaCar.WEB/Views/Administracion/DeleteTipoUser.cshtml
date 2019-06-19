@@ -1,0 +1,21 @@
+﻿
+
+
+<div>
+    Editar Tipo de Usuario
+    <div class="row">
+        <form ng-submit="eliminarTipoUser">
+            <div>
+                ID:
+                <input type="number"  class="form-control" ng-model="TipoUser.data.TipoUsuarioID" readonly="readonly" />
+            </div>
+
+            <input readonly required type="text" class="form-control mt-3" ng-model="TipoUser.data.Nombre" />
+            <input type="number" ng-model="TipoUser.data.EstadoID" />
+            <input type="button" ng-click="eliminarTipoUser(TipoUser.data.TipoUsuarioID)" value="Eliminar" class="btn btn-danger mt-3" />
+
+        </form>
+    </div>
+    
+</div>
+

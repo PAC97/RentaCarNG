@@ -1,0 +1,22 @@
+﻿
+
+
+
+<div class="jumbotron">
+    Editar Estado 
+    <div class="row">
+        <form ng-submit="guardarEstado">
+            <div ng-hide="creando">
+                ID:
+                <input type="number" class="form-control" ng-model="Estado.data.EstadoID" readonly="readonly" />
+            </div>
+
+            <input  required type="text" class="form-control mt-3" ng-model="Estado.data.Nombre" />
+
+            <input readonly="readonly" type="submit" ng-click="guardarEstado()" value="Guardar" class="btn btn-primary mt-3"/>
+        </form>
+    </div>
+    {{Estado.data | json}}
+</div>
+
+

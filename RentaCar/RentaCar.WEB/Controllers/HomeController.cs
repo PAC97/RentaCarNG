@@ -20,5 +20,9 @@ namespace RentaCar.WEB.Controllers
         {
             return View();
         }
+        public ActionResult menu()
+        {
+            return View();
+        }
     }
 }
